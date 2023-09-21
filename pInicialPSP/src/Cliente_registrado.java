@@ -57,10 +57,13 @@ public class Cliente_registrado implements Cliente {
     public int getDescuento() {
         return descuento;
     }
-
+    //no sé cómo se harán aquí las validaciones (solo he hecho la requerida por falta de tiempo) por lo que me he
+    //limitado a devolver false, pero yo estoy acostumbrado a generar excepciones en el caso de fallar una validación.
     boolean valida_DNI() {
-        //TODO
-        return true;
+        if (getDNI().matches("/(^[0-9]{8})([-]?)([A-Za-z]{1})$/")) {
+            return true;
+        }
+        return false;
     }
 
     boolean esVIP() {
